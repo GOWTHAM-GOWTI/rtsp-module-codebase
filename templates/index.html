@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        /* img {
+            /* vertical-align: middle; */
+            /* display: inline; */
+            /* display: inline; */
+            /* width: 200px; */
+            /* border: 10px black;
+            padding:20px 0px; */
+        /* }*/ 
+        .menu {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fields">
+            <div class="left">
+                <button class="items"><i class="fal fa-home-lg"> </i> Home</button>
+                <button class="items"><i class="fal fa-chart-bar"></i> Dashboard</button>
+                <button class="items"><i class="fal fa-address-book"></i> Index</button>
+                <button class="items"><i class="fal fa-map-marker-alt"></i> Map</button>
+                <button class="items">Help</button>
+                <button class="items">Home</button>
+                <button class="items">Home</button>
+                <button class="items">Index</button>
+                <button class="items">Map</button>
+                <button class="items">Help</button>
+                <button class="items"><i class="fal fa-question-circle"></i> Help</button>
+                <button class="items"><i class="fal fa-cog"></i> Settings</button>
+            </div>
+
+            <div class="right">
+                <div class="row">
+                    <form action="" method="post" class="form">
+                        <i class="far fa-search"></i>
+                        <input type="text" name="input" placeholder="  Enter Value" id="text" >
+                        <input type="submit" value="Submit">
+                    </form>
+                    <div class="area">
+                        <h2 class="mt-5">Camera's Overview</h2>
+                        <div class="video">
+                                {% if items %}
+                                {% for i in items %}
+                                    <img src="{{ url_for('video_feed') }}" width="400px" height="300px">
+                                {% endfor %}
+                                {% else %}
+                                    <img src="{{ url_for('video_feed') }}" width="100%">
+                                {% endif %}
+
+                            
+                            <!-- <img src="Default.jpg" alt="" width="400px" height="300px">
+                            <img src="Default.jpg" alt="" width="400px" height="300px">
+                            <img src="Default.jpg" alt="" width="400px" height="300px">
+                            <img src="Default.jpg" alt="" width="400px" height="300px">
+                            <img src="Default.jpg" alt="" width="400px" height="300px">
+                            <img src="Default.jpg" alt="" width="400px" height="300px"> -->
+
+                            
+                        </div>
+
+                    </div>
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
